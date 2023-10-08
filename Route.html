@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+    body{
+        margin:0;
+        height:100vh;
+        display:grid;
+        place-items:center;
+        background-color: rgb(14, 14, 15);
+        background-image: radial-gradient(rgba(124, 252, 0, 0.4) 1px, rgb(15, 15, 16) 1px);
+        background-size: 40px 40px;
+        border: 1px dotted rgba(124, 252, 0, 0.7);
+        outline: 1px dotted rgba(124, 252, 0, 0.7);
+        outline-offset: 20px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-padding: 0 0 0 55px;
+        scroll-behavior: smooth;
+        /* firefox scrollbar */
+        scrollbar-color: lawngreen #222;
+        scrollbar-width: auto;
+        animation: background 300s linear infinite;
+      }
+      
+      .gallery{
+        position:relative;
+        width:300px;
+        height:200px;
+        transform-style:preserve-3d;
+        animation:rotate 35s linear infinite;
+      }
+      
+      @keyframes rotate{
+        from{
+          transform:perspective(1200px) rotateY(0deg);
+        }
+        
+        to{
+          transform:perspective(1200px) rotateY(360deg);
+        }
+      }
+      
+      .gallery span{
+        position:absolute;
+        width:100%;
+        height:100%;
+        transform-origin:center;
+        transform-style:preserve-3d;
+        transform:rotateY(calc(var(--i) * 45deg)) translateZ(380px);
+      }
+      
+      .gallery span img{
+        position:absolute;
+        width:100%;
+        height:100%;
+        object-fit:cover;
+      }
+
+
+      .button{
+        display: inline-block;
+        margin-top: 1rem;
+        background-color: #74EBD5;
+        background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);
+        color:#070707;
+        margin-right: 12px;
+        padding:.8rem 4rem;
+        border:.5rem solid var(--black);
+        cursor: pointer;
+        font-size: 1.3rem;
+      }
+</style>
+
+
+<body>
+    <div class="gallery">
+        <span style="--i:1">
+          <img src="metro.jpg" alt="" />
+        </span>
+        <span style="--i:2">
+          <img src="bus.jpeg" alt="" />
+        </span>
+        <span style="--i:3">
+          <img src="auto.jpg" alt="" />
+        </span>
+        <span style="--i:4">
+          <img src="erickshaw5.jpg" alt="" />
+        </span>
+        <span style="--i:5">
+          <img src="taxi.jpg" alt="" />
+        </span>
+        <span style="--i:6">
+          <img src="bus3.jpg" alt="" />
+        </span>
+        <span style="--i:7">
+          <img src="metr.jpg" alt="" />
+        </span>
+        <span style="--i:8">
+          <img src="auto1.jpg" alt="" />
+        </span>
+      </div>
+</body>
+
+<section class="route" id="route">
+<a href="map.html" class="button">Metro Services</a>
+<a href="walk.html" class="button"> Bus Services </a>
+<a href="map.html" class="button">E-Rickshaw Services</a>
+<a href="walk.html" class="button"> Auto Services </a>
+</section>
+</html>
