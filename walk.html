@@ -15,6 +15,14 @@
 
 </head>
 <body>
+    <section class="bubble" id="bubble">
+        <h2>Speed Limit Alert </h2>
+    
+    
+    <button onclick="myFunction()">Crossed speed limit!!!</button>
+    <p id="demo"></p>
+    
+    </section>
     
     <section class="book" id="book">
 
@@ -71,6 +79,51 @@
         </form>
 
     </div>
+
+    <button class="open-button" onclick="openForm()">Check Nearest Hospital /Fire Station</button>
+
+<div class="form-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Hospitals and Firestations <br> NEAR YOU</h1>
+
+    <label for="email"><b>Location</b></label>
+    <input type="text" placeholder="Enter Location" name="Location" required>
+
+    <label for="psw"><b>Urgency</b></label>
+    <input type="text" placeholder="Enter time" name="psw" required>
+
+    <label for="psw"><b>Cassulaties</b></label>
+    <input type="text" placeholder="Members" name="psw" required>
+
+    <button type="submit" class="btn"> <a href="https://www.google.com/maps/search/nearest+hospitals+and+fire+station/@28.6458548,77.0188678,12z/data=!3m1!4b1?entry=ttu" class="btn">Find</a></button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+
+</section>
+</body>
+    
+<script>
+
+    function myFunction() {
+      var txt;
+      if (confirm("Press a button!")) {
+        txt = "Slow Down!!" ;
+      } else {
+        txt = "You pressed Cancel!";
+      }
+      document.getElementById("demo").innerHTML = txt;
+    }
+
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+      }
+      
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+      }
+    </script>
 
 </section>
 </body>
